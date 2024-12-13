@@ -4,31 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6323e97a-ca24-4967-9f07-85cb06e3c3d3" name="Changes" comment="structure">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/models/categorie.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/models/custom-data.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/models/default.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/models/host.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/models/id.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/models/organization.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/models/post.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/models/settings.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/models/user.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/services/user.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/signin.page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/signin.page.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/signin.page.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/signin.page.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
+    <list default="true" id="6323e97a-ca24-4967-9f07-85cb06e3c3d3" name="Changes" comment="add signin">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/models/id.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/models/id.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/user.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +106,7 @@
       <workItem from="1734038412188" duration="1176000" />
       <workItem from="1734039617510" duration="5953000" />
       <workItem from="1734076575634" duration="697000" />
-      <workItem from="1734077345437" duration="699000" />
+      <workItem from="1734077345437" duration="7529000" />
     </task>
     <task id="LOCAL-00001" summary="structure">
       <option name="closed" value="true" />
@@ -133,7 +116,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734039823269</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add signin">
+      <option name="closed" value="true" />
+      <created>1734078140345</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734078140345</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add signin">
+      <option name="closed" value="true" />
+      <created>1734078854384</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734078854384</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,31 +140,33 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="structure" />
+    <MESSAGE value="add signin" />
+    <option name="LAST_COMMIT_MESSAGE" value="add signin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/shared/services/user.service.ts</url>
-          <line>26</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/auth/signin2/signin.page.ts</url>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts</url>
-          <line>51</line>
+          <url>file://$PROJECT_DIR$/src/shared/services/host.service.ts</url>
+          <line>38</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts</url>
-          <line>45</line>
+          <url>file://$PROJECT_DIR$/src/shared/services/host.service.ts</url>
+          <line>28</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/shared/services/user.service.ts</url>
+          <line>39</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

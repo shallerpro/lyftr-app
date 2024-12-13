@@ -15,6 +15,18 @@ class IdModel extends DefaultModel {
     }
 
     /**
+     * Constructor
+     * @param {any} raw
+     * @param {string} defaultId
+     */
+    override init(raw: any = {}, defaultId = "") {
+        if (defaultId !== "") this.id = defaultId;
+        this.raw = raw ;
+        this.fromJSON(raw);
+    }
+
+
+    /**
      * Nouveau modèle ?
      * @return {any}
      */

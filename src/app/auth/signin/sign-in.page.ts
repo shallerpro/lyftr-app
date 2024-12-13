@@ -3,6 +3,7 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {UserService} from "../../../shared/services/user.service";
 import {IonButton, IonCheckbox, IonContent, IonHeader, IonInput, IonTitle, IonToolbar} from "@ionic/angular/standalone";
 import {Preferences} from "@capacitor/preferences";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -20,6 +21,7 @@ export class SignInPage implements OnInit {
   });
 
   private userService : UserService = inject(UserService);
+  private router : Router = inject(Router);
   public rememberMe: boolean = false;
 
 
@@ -54,10 +56,13 @@ export class SignInPage implements OnInit {
 
         if ( ret ) {
 
-          await Preferences.set({key: 'email' , value : email});
-          await Preferences.set({key: 'password' , value : password});
 
+          if ( this.rememberMe ) {
+            await Preferences.set({key: 'email', value: email});
+            await Preferences.set({key: 'password', value: password});
+          }
 
+          this.router.navigate(['/home'])
 
         }
 
