@@ -6,12 +6,12 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
   },
   {
-    path: 'signin',
-    loadComponent: () => import('./auth/signin/signin.page').then((m) => m.SigninPage),
+    path: 'signIn',
+    loadComponent: () => import('./auth/signin/sign-in.page').then((m) => m.SignInPage),
   },
   {
     path: '',
-    redirectTo: 'signin',
+    redirectTo: 'signIn',
     pathMatch: 'full',
   },
 ];
