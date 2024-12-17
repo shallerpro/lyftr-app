@@ -15,7 +15,6 @@ export class PostModel extends IdModel {
     title: string = "";
     content: string = "";
     imageUrl: string = "";
-    category: string = "";
     type: PostType = PostType.draft;
     checksum : string = "";
     organizationRef? : any ;

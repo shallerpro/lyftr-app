@@ -8,18 +8,17 @@
 
 <ion-content [fullscreen]="true">
     <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-        <ion-fab-button>
+        <ion-fab-button (click)="doAdd()">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
 
     <ion-content>
         <ion-list>
-            <ion-item *ngFor="let item of items; let index">
+            <ion-item *ngFor="let item of items; let index" (click)="doEdit ( item.id  )">
 
-                    <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
-
-                <ion-label>{{ item }}</ion-label>
+                    <img src="{{item.imageUrl}}" class="img">
+                <ion-label>{{ item.title }}</ion-label>
             </ion-item>
         </ion-list>
 

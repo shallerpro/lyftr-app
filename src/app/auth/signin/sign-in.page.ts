@@ -4,6 +4,7 @@ import {UserService} from "../../../shared/services/user.service";
 import {IonButton, IonCheckbox, IonContent, IonHeader, IonInput, IonTitle, IonToolbar} from "@ionic/angular/standalone";
 import {Preferences} from "@capacitor/preferences";
 import {Router} from "@angular/router";
+import {Auth, getAuth, onAuthStateChanged} from "@angular/fire/auth";
 
 
 @Component({
@@ -16,7 +17,7 @@ import {Router} from "@angular/router";
 export class SignInPage implements OnInit {
 
   public signInForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [ Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
 
@@ -29,6 +30,21 @@ export class SignInPage implements OnInit {
   }
 
   async ngOnInit() {
+    const auth = getAuth();
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        await this.userService.setCurrentUser( user.uid );
+
+        await this.router.navigate(['/home']);
+
+      } else {
+        await this.userService.logout();
+        await this.router.navigate(['/signIn']);
+      }
+    });
+
+
+
     const email = await Preferences.get({key: 'email'});
     const password = await Preferences.get({key: 'password'});
     if (email.value && email.value !== '' && password.value && password.value !== '') {
@@ -56,13 +72,10 @@ export class SignInPage implements OnInit {
 
         if ( ret ) {
 
-
           if ( this.rememberMe ) {
             await Preferences.set({key: 'email', value: email});
             await Preferences.set({key: 'password', value: password});
           }
-
-          this.router.navigate(['/home'])
 
         }
 

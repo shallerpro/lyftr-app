@@ -1,6 +1,7 @@
 
 
 export const environment = {
+  production : false ,
   firebaseConfig: {
     apiKey: "AIzaSyAkxoq1L13F_LZ3SQ8Yzgxmq4MejdxUG7U",
     locationId: 'europe-west1',
