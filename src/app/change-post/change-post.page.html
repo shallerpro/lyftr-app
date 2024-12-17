@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button (click)="doBack()">
+                <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>
+            Ajouter un post
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+    <form [formGroup]="postForm">
+
+    <ion-row (click)="selectImage()">
+        <h3>Image</h3>
+    </ion-row>
+    <ion-row class="row-img">
+
+        @if ( currentImageUrl ) {
+
+        <ion-img class="img" src="{{currentImageUrl}}">
+
+        </ion-img>
+        } @else {
+
+            <button (click)="selectImage()">Choisir une photo</button>
+
+        }
+
+    </ion-row>
+
+   <ion-row>
+       <h3>Categories</h3>
+   </ion-row>
+
+
+    <ion-row>
+        @for (category of categories; track category.id) {
+
+            @if (category.raw.selected ) {
+                <ion-chip class="chip-selected" (click)="doSelectCategory(category)" >{{category.name}}</ion-chip>
+            } @else {
+                <ion-chip (click)="doSelectCategory(category)" >{{category.name}}</ion-chip>
+            }
+        } @empty {
+            Aucune categorie
+        }
+    </ion-row>
+
+    @if ( isAiCheck()  ) {
+    <ion-row>
+        <ion-col><h3>Génération IA</h3></ion-col><ion-col (click)="doSwitchAiManuel()">Manuel</ion-col>
+        <ion-textarea formControlName="aiPattern" rows="10"></ion-textarea>
+    </ion-row>
+    } @else {
+
+    <ion-row>
+        <ion-col><h3>Titre</h3></ion-col><ion-col  (click)="doSwitchAiManuel()">IA</ion-col>
+        <ion-input formControlName="title"></ion-input>
+    </ion-row>
+    <ion-row>
+        <h3>Contenu</h3>
+        <ion-textarea formControlName="content" rows="5"></ion-textarea>
+    </ion-row>
+
+    }
+
+    <ion-row>
+        <h3>Durée</h3>
+    </ion-row>
+    <ion-row>
+        <ion-chip class="chip-selected" >Illimité</ion-chip>
+        <ion-chip>1 jour</ion-chip>
+        <ion-chip>1 semaine</ion-chip>
+        <ion-chip>1 mois</ion-chip>
+
+
+    </ion-row>
+    <ion-row>
+        <ion-button (click)="doAddPost()" >Valider</ion-button>
+    </ion-row>
+    </form>
+
+</ion-content>
