@@ -1,7 +1,16 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {UserService} from "../../../shared/services/user.service";
-import {IonButton, IonCheckbox, IonContent, IonHeader, IonInput, IonTitle, IonToolbar} from "@ionic/angular/standalone";
+import {
+  IonButton,
+  IonCheckbox,
+  IonContent,
+  IonHeader,
+  IonImg,
+  IonInput,
+  IonTitle,
+  IonToolbar
+} from "@ionic/angular/standalone";
 import {Preferences} from "@capacitor/preferences";
 import {Router} from "@angular/router";
 import {Auth, getAuth, onAuthStateChanged} from "@angular/fire/auth";
@@ -12,7 +21,7 @@ import {Auth, getAuth, onAuthStateChanged} from "@angular/fire/auth";
   templateUrl: './sign-in.page.html',
   styleUrls: ['./sign-in.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, ReactiveFormsModule , IonInput , IonCheckbox],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, ReactiveFormsModule, IonInput, IonCheckbox, IonImg],
 })
 export class SignInPage implements OnInit {
 
@@ -28,6 +37,8 @@ export class SignInPage implements OnInit {
 
   constructor( ) {
   }
+
+
 
   async ngOnInit() {
     const auth = getAuth();

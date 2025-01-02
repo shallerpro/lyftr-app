@@ -4,25 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6323e97a-ca24-4967-9f07-85cb06e3c3d3" name="Changes" comment="add utils services">
-      <change afterPath="$PROJECT_DIR$/src/shared/services/post.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/services/post.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/services/storage.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/services/storage.service.ts" afterDir="false" />
+    <list default="true" id="6323e97a-ca24-4967-9f07-85cb06e3c3d3" name="Changes" comment="add change post">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/home/home.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/models/post.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/models/post.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/services/host.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/host.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/services/settings.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/settings.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/services/storage.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/storage.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme/variables.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,23 +39,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "JavaScript Debug.Angular Application.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/stephanhaller/Git/lyftr-app/src/app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Angular CLI Server.executor": "Debug",
-    "ts.external.directory.path": "/Users/stephanhaller/Git/lyftr-app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;JavaScript Debug.Angular Application.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/stephanhaller/Git/lyftr-app/src/app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Angular CLI Server.executor&quot;: &quot;Debug&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/stephanhaller/Git/lyftr-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app" />
@@ -120,6 +112,9 @@
       <workItem from="1734077345437" duration="12008000" />
       <workItem from="1734337123051" duration="825000" />
       <workItem from="1734340741648" duration="21538000" />
+      <workItem from="1734457778688" duration="3578000" />
+      <workItem from="1735553202040" duration="1200000" />
+      <workItem from="1735814471633" duration="1793000" />
     </task>
     <task id="LOCAL-00001" summary="structure">
       <option name="closed" value="true" />
@@ -161,7 +156,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734085637195</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add change post">
+      <option name="closed" value="true" />
+      <created>1734457869939</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734457869939</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add change post">
+      <option name="closed" value="true" />
+      <created>1734457879931</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734457879931</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +182,8 @@
     <MESSAGE value="structure" />
     <MESSAGE value="add signin" />
     <MESSAGE value="add utils services" />
-    <option name="LAST_COMMIT_MESSAGE" value="add utils services" />
+    <MESSAGE value="add change post" />
+    <option name="LAST_COMMIT_MESSAGE" value="add change post" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

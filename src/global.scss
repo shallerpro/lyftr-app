@@ -32,6 +32,26 @@
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+@import "@ionic/angular/css/palettes/dark.always.css";
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+//@import '@ionic/angular/css/palettes/dark.system.css';
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+* {
+  font-family: Kumbh Sans, sans-serif !important;
+}
+
+
+
+h1 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+ion-button {
+  font-size : 16px !important;
+  font-weight: bold;
+  text-transform: none;
+  height: 64px;
+  color: white;
+}

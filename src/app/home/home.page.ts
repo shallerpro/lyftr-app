@@ -60,6 +60,10 @@ export class HomePage implements OnInit {
 
   }
 
+  doLogout() {
+    this.userService.logout();
+  }
+
   async doAdd() {
     this.router.navigate(['/addPost'])
 

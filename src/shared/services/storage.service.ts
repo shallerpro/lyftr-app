@@ -21,8 +21,8 @@ export class StorageService {
     if (oldUrl === base64) {
       return base64;
     }
-    //detecte si l'ancienne image est une base64
-    oldUrl = oldUrl.includes('data:image') ? '' : oldUrl;
+    //detecte si l'ancienne images est une base64
+    oldUrl = oldUrl.includes('data:images') ? '' : oldUrl;
     if (oldUrl && oldUrl != '' && oldUrl != base64) {
       const storageRef = ref(this.storage, oldUrl);
       deleteObject(storageRef).catch((e) => {
@@ -39,7 +39,7 @@ export class StorageService {
     return await getDownloadURL(storageRef);
   }
 
-  // Supprime une image dans le storage firebase
+  // Supprime une images dans le storage firebase
   async deleteImage(url: string) {
     const storageRef = ref(this.storage, url);
     return await deleteObject(storageRef);
@@ -76,7 +76,7 @@ export class StorageService {
         ctx.drawImage(img, 0, 0, width, height);
 
         // Convert the canvas to a base64 string
-        resolve(canvas.toDataURL('image/jpeg', 1));
+        resolve(canvas.toDataURL('images/jpeg', 1));
       };
       img.onerror = reject;
     });
