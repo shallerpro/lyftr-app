@@ -3,4 +3,21 @@
   max-height: 150px;
   width: 150px;
   height: 150px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+
+ion-img {
+  width: 80px;
+
+}
+
+ion-item {
+  padding: 1px !important;
+  margin: 1px !important;
+}
+
+ion-content {
+  --background-color: #FFFFFF;
 }

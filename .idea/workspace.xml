@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6323e97a-ca24-4967-9f07-85cb06e3c3d3" name="Changes" comment="add change post">
+    <list default="true" id="6323e97a-ca24-4967-9f07-85cb06e3c3d3" name="Changes" comment="reskin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/home/home.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/services/storage.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/storage.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/theme/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme/variables.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +110,7 @@
       <workItem from="1734340741648" duration="21538000" />
       <workItem from="1734457778688" duration="3578000" />
       <workItem from="1735553202040" duration="1200000" />
-      <workItem from="1735814471633" duration="1793000" />
+      <workItem from="1735814471633" duration="20002000" />
     </task>
     <task id="LOCAL-00001" summary="structure">
       <option name="closed" value="true" />
@@ -172,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734457879931</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="reskin">
+      <option name="closed" value="true" />
+      <created>1735827859860</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1735827859860</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +187,8 @@
     <MESSAGE value="add signin" />
     <MESSAGE value="add utils services" />
     <MESSAGE value="add change post" />
-    <option name="LAST_COMMIT_MESSAGE" value="add change post" />
+    <MESSAGE value="reskin" />
+    <option name="LAST_COMMIT_MESSAGE" value="reskin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
