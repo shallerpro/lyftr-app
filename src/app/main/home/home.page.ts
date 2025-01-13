@@ -32,7 +32,8 @@ export class HomePage implements OnInit {
         addIcons({add});
 
         this.userService.obsCurrentHost().subscribe(async (host) => {
-            await this.init(host);
+            if (host)
+                await this.init(host);
         });
 
     }

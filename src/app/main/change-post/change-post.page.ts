@@ -59,13 +59,14 @@ export class ChangePostPage implements OnInit {
     private userService: UserService = inject(UserService);
     private hostService: HostService = inject(HostService);
     private postService: PostService = inject(PostService);
-    private currentHost!: HostModel;
+
 
     constructor() {
         addIcons({arrowBackOutline})
         this.userService.obsCurrentHost().subscribe(async (host) => {
-            this.currentHost = host;
-            await this.init(host);
+            if (host)
+                await this.init(host);
+
         });
     }
 
@@ -171,7 +172,7 @@ export class ChangePostPage implements OnInit {
             if (this.userService.currentHostRef)
                 post.hostRef = this.userService.currentHostRef;
 
-            post.organizationRef = this.userService.currentUser?.organizationRef;
+            post.organizationRef = this.userService.getCurrentUser()?.organizationRef;
             post.imageUrl = this.currentImageUrl;
 
             if (this.currentId != '') {
@@ -179,9 +180,9 @@ export class ChangePostPage implements OnInit {
                 await this.postService.editPost(post);
 
             } else {
-
-                if (this.userService.currentHost)
-                    await this.postService.addPost(this.currentHost, post);
+                const currentHost = this.userService.getCurrentHost();
+                if (currentHost)
+                    await this.postService.addPost(currentHost, post);
             }
 
             await this.router.navigate(['home']);

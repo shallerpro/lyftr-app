@@ -6,15 +6,15 @@ import {HostService} from "./host.service";
 import {HostModel} from "../models/host.model";
 import {DocumentReference} from "@angular/fire/compat/firestore";
 import {SettingsService} from "./settings.service";
-import {Subject} from "rxjs";
+import {BehaviorSubject} from "rxjs";
 
 
 @Injectable({
     providedIn: 'root',
 })
 export class UserService {
-    public currentUser: UserModel | null = null;
-    public currentHost: Subject<HostModel> = new Subject<HostModel>();
+    public currentUser: BehaviorSubject<UserModel | null> = new BehaviorSubject<UserModel | null>(null);
+    public currentHost: BehaviorSubject<HostModel | null> = new BehaviorSubject<HostModel | null>(null);
     public currentHostRef: DocumentReference | null = null;
     private auth: Auth = inject(Auth);
     private firestore: Firestore = inject(Firestore);
@@ -33,14 +33,26 @@ export class UserService {
     }
 
     isConnected(): boolean {
-        return (this.currentUser != null);
+        return (this.currentUser.value != null);
 
     }
 
     public obsCurrentHost() {
         return this.currentHost;
     }
-    
+
+    public getCurrentHost() {
+        return this.currentHost.value;
+    }
+
+    public obsCurrentUser() {
+        return this.currentUser;
+    }
+
+    public getCurrentUser() {
+        return this.currentUser.value;
+    }
+
 
     async changeCurrentHost(host: HostModel) {
         this.currentHost.next(host);
@@ -53,11 +65,11 @@ export class UserService {
         const userRef: any = doc(this.firestore, 'users', uid);
         const userDoc: any = await getDoc(userRef);
         if (userDoc) {
-            this.currentUser = new UserModel(userDoc.data(), userDoc.id);
-            this.currentUser.organizationRef = this.currentUser.raw.organizationRef;
-            console.log(this.currentUser);
-
-            let hosts: any = await this.host.getHostsByUser(this.currentUser);
+            const user = new UserModel(userDoc.data(), userDoc.id);
+            user.organizationRef = user.raw.organizationRef;
+            console.log(user);
+            this.currentUser.next(user);
+            let hosts: any = await this.host.getHostsByUser(user);
 
             if (hosts)
                 await this.changeCurrentHost(hosts[0]);
@@ -67,7 +79,10 @@ export class UserService {
     async signInByEmail(email: string, password: string) {
 
         try {
-            await signInWithEmailAndPassword(this.auth, email, password);
+            const user = await signInWithEmailAndPassword(this.auth, email, password);
+            if (user) {
+                return true;
+            }
         } catch (e) {
             console.error("Error while signing in", e);
         }
@@ -76,8 +91,8 @@ export class UserService {
 
 
     async logout() {
-        this.currentUser = null;
-        this.auth.signOut();
+        this.currentUser.next(null);
+        await this.auth.signOut();
 
     }
 

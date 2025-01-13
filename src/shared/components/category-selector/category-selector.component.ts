@@ -11,7 +11,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     templateUrl: './category-selector.component.html',
     styleUrls: ['./category-selector.component.scss'],
     standalone: true,
-  imports: [ReactiveFormsModule, IonRow, IonChip]
+    imports: [ReactiveFormsModule, IonRow, IonChip]
 })
 export class CategorySelectorComponent implements OnInit {
 
@@ -22,7 +22,8 @@ export class CategorySelectorComponent implements OnInit {
 
     constructor() {
         this.userService.obsCurrentHost().subscribe(async (host) => {
-            this.categories = await this.hostService.getCategoriesByHost(host);
+            if (host)
+                this.categories = await this.hostService.getCategoriesByHost(host);
         });
     }
 
