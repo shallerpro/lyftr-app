@@ -5,40 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6323e97a-ca24-4967-9f07-85cb06e3c3d3" name="Changes" comment="sidebar">
-      <change afterPath="$PROJECT_DIR$/src/app/auth/auth.page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/auth/auth.page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/auth/auth.page.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/auth/auth.page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/auth/auth.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/main/main.page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/main/main.page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/main/main.page.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/main/main.page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/main/main.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/services/sidebar.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/services/sidebar.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/change-post/change-post.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/change-post/change-post.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/change-post/change-post.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/change-post/change-post.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/change-post/change-post.page.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/change-post/change-post.page.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/change-post/change-post.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/change-post/change-post.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/home/home.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/home/home.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/home/home.page.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/home/home.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/change-post/change-post.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/change-post/change-post.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/home/home.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/home/home.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/category-selector/category-selector.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/category-selector/category-selector.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.spec.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,9 +34,6 @@
     &quot;assignee&quot;: &quot;Meta68&quot;
   }
 }</component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="9c433e23-f09f-405e-8669-e38c4dc245de" />
-  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/shallerpro/lyftr-app.git&quot;,
@@ -173,7 +142,7 @@
       <workItem from="1735553202040" duration="1200000" />
       <workItem from="1735814471633" duration="20002000" />
       <workItem from="1736786511711" duration="470000" />
-      <workItem from="1736787010014" duration="6974000" />
+      <workItem from="1736787010014" duration="7871000" />
     </task>
     <task id="LOCAL-00001" summary="structure">
       <option name="closed" value="true" />
@@ -239,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735827859860</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="sidebar">
+      <option name="closed" value="true" />
+      <created>1736794344891</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1736794344891</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,18 +237,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/auth/signin2/signin.page.ts</url>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/app/main/change-post/change-post.page.ts</url>
-          <line>174</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/shared/services/user.service.ts</url>
-          <line>25</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

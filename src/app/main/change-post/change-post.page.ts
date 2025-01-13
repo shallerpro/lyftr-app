@@ -28,6 +28,7 @@ import {PostModel} from "../../../shared/models/post.model";
 import {doc, Firestore} from "@angular/fire/firestore";
 import {PostService} from "../../../shared/services/post.service";
 import {SettingsService} from "../../../shared/services/settings.service";
+import {HostModel} from "../../../shared/models/host.model";
 
 @Component({
     selector: 'app-change-post',
@@ -58,9 +59,14 @@ export class ChangePostPage implements OnInit {
     private userService: UserService = inject(UserService);
     private hostService: HostService = inject(HostService);
     private postService: PostService = inject(PostService);
+    private currentHost!: HostModel;
 
     constructor() {
         addIcons({arrowBackOutline})
+        this.userService.obsCurrentHost().subscribe(async (host) => {
+            this.currentHost = host;
+            await this.init(host);
+        });
     }
 
     doBack() {
@@ -86,10 +92,10 @@ export class ChangePostPage implements OnInit {
 
     }
 
-    async ngOnInit() {
+    async init(host: HostModel) {
 
-        if (this.userService.currentHost)
-            this.categories = await this.hostService.getCategoriesByHost(this.userService.currentHost);
+
+        this.categories = await this.hostService.getCategoriesByHost(host);
 
 
         this.currentId = this.route.snapshot.params['id'];
@@ -133,6 +139,12 @@ export class ChangePostPage implements OnInit {
 
     }
 
+
+    async ngOnInit() {
+
+
+    }
+
     async doAddPost() {
 
         try {
@@ -169,7 +181,7 @@ export class ChangePostPage implements OnInit {
             } else {
 
                 if (this.userService.currentHost)
-                    await this.postService.addPost(this.userService.currentHost, post);
+                    await this.postService.addPost(this.currentHost, post);
             }
 
             await this.router.navigate(['home']);

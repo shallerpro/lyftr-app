@@ -9,7 +9,7 @@ import {UserService} from "../../../shared/services/user.service";
 import {PostModel} from "../../../shared/models/post.model";
 import {Observable} from "rxjs";
 import {CategorySelectorComponent} from "../../../shared/components/category-selector/category-selector.component";
-import {NgOptimizedImage} from "@angular/common";
+import {HostModel} from "../../../shared/models/host.model";
 
 
 @Component({
@@ -17,7 +17,7 @@ import {NgOptimizedImage} from "@angular/common";
     templateUrl: 'home.page.html',
     styleUrls: ['home.page.scss'],
     standalone: true,
-    imports: [IonImg, IonContent, IonFab, IonFabButton, IonIcon, IonList, IonItem, IonLabel, CategorySelectorComponent, NgOptimizedImage],
+    imports: [IonImg, IonContent, IonFab, IonFabButton, IonIcon, IonList, IonItem, IonLabel, CategorySelectorComponent],
 })
 export class HomePage implements OnInit {
 
@@ -31,40 +31,46 @@ export class HomePage implements OnInit {
     constructor() {
         addIcons({add});
 
+        this.userService.obsCurrentHost().subscribe(async (host) => {
+            await this.init(host);
+        });
+
+    }
+
+    async init(host: HostModel) {
+
+        let items: any = await this.postService.getPostsByHost(host);
+        this.currentHostName = host.url;
+
+        this.refresh$ = this.postService.getPostObservable(host);
+
+        if (this.refresh$.subscribe(async () => {
+            console.log("refresh");
+
+            this.items = await this.postService.getPostsByHost(host);
+        }))
+
+            if (items)
+                this.items = items
+
     }
 
     async ngOnInit() {
 
-        let host: any = this.userService.currentHost;
-        if (host) {
-            let items: any = await this.postService.getPostsByHost(host);
-            this.currentHostName = host.url;
-
-            this.refresh$ = this.postService.getPostObservable(host);
-
-            if (this.refresh$.subscribe(async () => {
-                console.log("refresh");
-
-                this.items = await this.postService.getPostsByHost(host);
-            }))
-
-                if (items)
-                    this.items = items
-        }
 
     }
 
-    doLogout() {
-        this.userService.logout();
+    async doLogout() {
+        await this.userService.logout();
     }
 
     async doAdd() {
-        this.router.navigate(['/addPost'])
+        await this.router.navigate(['/addPost'])
 
     }
 
     async doEdit(postId: string) {
-        this.router.navigate(['/addPost', {id: postId}]);
+        await this.router.navigate(['/addPost', {id: postId}]);
     }
 
 

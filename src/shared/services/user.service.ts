@@ -6,6 +6,7 @@ import {HostService} from "./host.service";
 import {HostModel} from "../models/host.model";
 import {DocumentReference} from "@angular/fire/compat/firestore";
 import {SettingsService} from "./settings.service";
+import {Subject} from "rxjs";
 
 
 @Injectable({
@@ -13,7 +14,7 @@ import {SettingsService} from "./settings.service";
 })
 export class UserService {
     public currentUser: UserModel | null = null;
-    public currentHost: HostModel | null = null;
+    public currentHost: Subject<HostModel> = new Subject<HostModel>();
     public currentHostRef: DocumentReference | null = null;
     private auth: Auth = inject(Auth);
     private firestore: Firestore = inject(Firestore);
@@ -36,9 +37,13 @@ export class UserService {
 
     }
 
-    async changeCurrentHost(host: HostModel) {
+    public obsCurrentHost() {
+        return this.currentHost;
+    }
+    
 
-        this.currentHost = host;
+    async changeCurrentHost(host: HostModel) {
+        this.currentHost.next(host);
         this.currentHostRef =
             this.settings.getDocRef(this.settings.HOST_COLLECTION, host.id);
 
