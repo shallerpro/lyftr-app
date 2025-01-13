@@ -1,0 +1,7 @@
+.sidebar {
+  width: 85px;
+
+  &.isOpen {
+    width: 250px;
+  }
+}

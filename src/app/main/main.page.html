@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div [class.isOpen]="isOpen" class="sidebar px-0">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none" href="/">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a class="nav-link align-middle px-0" href="#">
+                            <i class="fs-4 bi-house"></i>
+                            @if (isOpen) {
+                                <span class="ms-1  d-sm-inline">Home</span>
+                            }
+
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link px-0 align-middle" href="#">
+                            <i class="fs-4 bi-table"></i>
+                            @if (isOpen) {
+                                <span class="ms-1  d-sm-inline">Home</span>
+                            }
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link px-0 align-middle" href="#">
+                            <i class="fs-4 bi-people"></i>
+                            @if (isOpen) {
+                                <span class="ms-1  d-sm-inline">Home</span>
+                            }
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="col py-3">
+            <ion-content>
+                <ion-router-outlet></ion-router-outlet>
+            </ion-content>
+        </div>
+    </div>
+</div>

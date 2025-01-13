@@ -25,6 +25,7 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+@import "bootstrap-icons/font/bootstrap-icons.css";
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
@@ -42,16 +43,18 @@
 }
 
 
-
 h1 {
   font-size: 35px;
   font-weight: bold;
 }
 
 ion-button {
-  font-size : 16px !important;
+  font-size: 16px !important;
   font-weight: bold;
   text-transform: none;
   height: 64px;
   color: white;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

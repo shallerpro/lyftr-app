@@ -1,30 +1,27 @@
-import { Routes } from '@angular/router';
-import {canActivate} from "@angular/fire/auth-guard";
-import {mainGuard} from "../shared/guards/main.guard";
+import {Routes} from '@angular/router';
+import {AuthGuard, redirectUnauthorizedTo} from "@angular/fire/auth-guard";
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['/auth/signIn']);
 
 export const routes: Routes = [
-  {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
-    canActivate : [ mainGuard ]
-  },
-  {
-    path: 'signIn',
-    loadComponent: () => import('./auth/signin/sign-in.page').then((m) => m.SignInPage),
-  },
-  {
-    path: 'addPost',
-    loadComponent: () => import('./change-post/change-post.page').then((m) => m.ChangePostPage),
-    canActivate : [ mainGuard ]
-  },
-  {
-    path: 'addPost/:id',
-    loadComponent: () => import('./change-post/change-post.page').then((m) => m.ChangePostPage),
-    canActivate : [ mainGuard ]
-  },
-  {
-    path: '',
-    redirectTo: 'signIn',
-    pathMatch: 'full',
-  },
+
+
+    {
+        path: '',
+        canActivate: [AuthGuard],
+        loadChildren: () =>
+            import('./main/main.routes').then(m => m.mainRoutes),
+        data: {authGuardPipe: redirectUnauthorizedToLogin}
+    },
+    {
+        path: 'auth',
+        loadChildren: () =>
+            import('./auth/auth.routes').then(m => m.authRoutes)
+    },
+    {
+        path: '**',
+        redirectTo: 'home',
+        pathMatch: 'full',
+    }
+
 ];

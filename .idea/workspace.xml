@@ -4,24 +4,75 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6323e97a-ca24-4967-9f07-85cb06e3c3d3" name="Changes" comment="reskin">
+    <list default="true" id="6323e97a-ca24-4967-9f07-85cb06e3c3d3" name="Changes" comment="sidebar">
+      <change afterPath="$PROJECT_DIR$/src/app/auth/auth.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/auth/auth.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/auth/auth.page.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/auth/auth.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/auth/auth.routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/main/main.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/main/main.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/main/main.page.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/main/main.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/main/main.routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/services/sidebar.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/services/sidebar.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/signin/sign-in.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/change-post/change-post.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/change-post/change-post.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/change-post/change-post.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/change-post/change-post.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/change-post/change-post.page.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/change-post/change-post.page.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/change-post/change-post.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/change-post/change-post.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/home/home.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/home/home.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/home/home.page.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/home/home.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/home/home.page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.spec.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Meta68&quot;
+  }
+}</component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="9c433e23-f09f-405e-8669-e38c4dc245de" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/shallerpro/lyftr-app.git&quot;,
+    &quot;accountId&quot;: &quot;5a98188a-7bc6-47b4-ad5b-8ef88d6b74af&quot;
+  }
+}</component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -32,33 +83,43 @@
 }</component>
   <component name="ProjectId" id="2q8JA7w0tqD2BaNBvkvbsKKXQon" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;JavaScript Debug.Angular Application.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/stephanhaller/Git/lyftr-app/src/app&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.Angular CLI Server.executor&quot;: &quot;Debug&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/stephanhaller/Git/lyftr-app/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "JavaScript Debug.Angular Application.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/git/lyftr-app/src/app/auth",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.Angular CLI Server.executor": "Debug",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "D:\\git\\lyftr-app\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git\lyftr-app\src\app\auth" />
+      <recent name="D:\git\lyftr-app\src\app\main" />
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/shared/services" />
       <recent name="$PROJECT_DIR$/src/shared" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\git\lyftr-app\src\app\main" />
       <recent name="$PROJECT_DIR$/src/app/auth" />
     </key>
   </component>
@@ -88,7 +149,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
       </set>
     </attachedChunks>
   </component>
@@ -111,6 +172,8 @@
       <workItem from="1734457778688" duration="3578000" />
       <workItem from="1735553202040" duration="1200000" />
       <workItem from="1735814471633" duration="20002000" />
+      <workItem from="1736786511711" duration="470000" />
+      <workItem from="1736787010014" duration="6974000" />
     </task>
     <task id="LOCAL-00001" summary="structure">
       <option name="closed" value="true" />
@@ -188,7 +251,8 @@
     <MESSAGE value="add utils services" />
     <MESSAGE value="add change post" />
     <MESSAGE value="reskin" />
-    <option name="LAST_COMMIT_MESSAGE" value="reskin" />
+    <MESSAGE value="sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="sidebar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -196,6 +260,18 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/auth/signin2/signin.page.ts</url>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/main/change-post/change-post.page.ts</url>
+          <line>174</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/shared/services/user.service.ts</url>
+          <line>25</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
