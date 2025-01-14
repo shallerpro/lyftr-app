@@ -1,7 +1,74 @@
 .sidebar {
   width: 85px;
+  background: #F9F9FA;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+
+  .content-side {
+
+    width: 100%;
+    height: 80%;
+    padding: 50px 0 0;
+
+    ul {
+      width: 100%;
+
+      li {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          i {
+            font-size: 28px !important;
+            color: #D0D0D0 !important;
+            font-weight: bold;
+          }
+        }
+
+        a:hover {
+          i {
+            color: #000 !important;
+          }
+        }
+
+        &.active {
+          border-right: #21CC9E 5px solid;
+
+          a {
+            i {
+              color: #000 !important;
+            }
+          }
+        }
+
+      }
+    }
+
+
+  }
+
+  .content-footer {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    text-align: center;
+    margin-bottom: 30px;
+
+  }
 
   &.isOpen {
     width: 250px;
   }
+
+
 }
+

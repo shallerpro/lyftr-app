@@ -1,7 +1,7 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {UserService} from "../../../shared/services/user.service";
-import {IonButton, IonCheckbox, IonContent, IonImg, IonInput} from "@ionic/angular/standalone";
+import {IonButton, IonCheckbox, IonContent, IonImg, IonInput, IonLabel} from "@ionic/angular/standalone";
 import {Preferences} from "@capacitor/preferences";
 import {Router} from "@angular/router";
 
@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
     templateUrl: './sign-in.page.html',
     styleUrls: ['./sign-in.page.scss'],
     standalone: true,
-    imports: [IonContent, IonButton, ReactiveFormsModule, IonInput, IonCheckbox, IonImg],
+    imports: [IonContent, IonButton, ReactiveFormsModule, IonInput, IonCheckbox, IonImg, IonLabel],
 })
 export class SignInPage implements OnInit {
 

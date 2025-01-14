@@ -7,6 +7,7 @@ import {HostModel} from "../models/host.model";
 import {DocumentReference} from "@angular/fire/compat/firestore";
 import {SettingsService} from "./settings.service";
 import {BehaviorSubject} from "rxjs";
+import {Router} from "@angular/router";
 
 
 @Injectable({
@@ -20,6 +21,7 @@ export class UserService {
     private firestore: Firestore = inject(Firestore);
     private host: HostService = inject(HostService);
     private settings: SettingsService = inject(SettingsService);
+    private readonly router: Router = inject(Router);
 
     constructor() {
         const auth = getAuth();
@@ -27,7 +29,7 @@ export class UserService {
             if (user) {
                 await this.setCurrentUser(user.uid);
             } else {
-                await this.logout();
+                await this.router.navigate(['/auth/sign-in']);
             }
         });
     }

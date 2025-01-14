@@ -18,6 +18,8 @@ ion-item {
   margin: 1px !important;
 }
 
-ion-content {
+
+.content {
   --background-color: #FFFFFF;
+  --overflow: hidden;
 }

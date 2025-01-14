@@ -1,18 +1,22 @@
-<ion-content class="ion-padding">
-    <ion-img class="logo" src="assets/images/logo.png"></ion-img>
-    <h1>Simplifiez  la mise à jour de votre Wordpress</h1>
+<ion-content class=" content">
+    <ion-img class="logo" src="assets/images/logo-big.png"></ion-img>
+    <h1>Simplifiez la <br>mise à jour de votre Wordpress</h1>
     <form [formGroup]="signInForm">
 
-
-        <ion-input  formControlName="email" placeholder="Votre email"></ion-input>
-        <ion-input formControlName="password" placeholder="Votre mot de passe" type="password" class="primary-input"></ion-input>
+        <ion-label>Email</ion-label>
+        <ion-input formControlName="email" placeholder="Votre email"></ion-input>
+        <ion-label>Mot de passe</ion-label>
+        <ion-input class="primary-input" formControlName="password" placeholder="Votre mot de passe"
+                   type="password"></ion-input>
 
         <div class="ion-margin-top ion-text-left">
-            <ion-checkbox labelPlacement="end" [checked]="rememberMe">Se souvenir de moi</ion-checkbox>
+            <ion-checkbox [checked]="rememberMe" labelPlacement="end">Se souvenir de moi</ion-checkbox>
         </div>
 
         <div class="ion-margin-top button">
-            <ion-button shape="round" [disabled]="signInForm.invalid" (click)="onSignInFormSubmit()" expand="block" >Connectez-vous</ion-button>
+            <ion-button (click)="onSignInFormSubmit()" [disabled]="signInForm.invalid" expand="block" shape="round">
+                Se connecter
+            </ion-button>
         </div>
 
     </form>
