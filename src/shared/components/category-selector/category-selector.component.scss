@@ -1,9 +1,8 @@
 .scroller {
-  overflow-x: scroll !important;
+  overflow-x: auto !important;
   overflow-y: hidden;
-  height: 60px;
-  padding-bottom: 20px;
-  padding-top: 10px;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
 }
 
 .no-scroller {
@@ -19,16 +18,23 @@
 .container-no-scroller {
   width: 100%;
 }
+
 .chip-selected {
-  background-color : blue !important;
+  background-color: #21CC9E !important;
   color: white;
+  border: 1px solid #21CC9E !important;
 }
 
 .chip {
-  background-color : silver;
+  background-color: transparent;
   padding: 10px;
   margin: 5px;
   border-radius: 20px;
   height: 40px !important;
   float: left;
+  border: 1px solid #000000;
+
+
+  line-height: 16px;
+
 }

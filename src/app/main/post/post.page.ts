@@ -31,14 +31,14 @@ import {SettingsService} from "../../../shared/services/settings.service";
 import {HostModel} from "../../../shared/models/host.model";
 
 @Component({
-    selector: 'app-change-post',
-    templateUrl: './change-post.page.html',
-    styleUrls: ['./change-post.page.scss'],
+    selector: 'app-post',
+    templateUrl: './post.page.html',
+    styleUrls: ['./post.page.scss'],
     standalone: true,
     imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, ReactiveFormsModule, IonIcon,
         IonInput, IonRow, IonImg, IonChip, IonTextarea, IonCol, IonButtons]
 })
-export class ChangePostPage implements OnInit {
+export class PostPage implements OnInit {
 
     public postForm = new FormGroup({
         aiPattern: new FormControl(''),

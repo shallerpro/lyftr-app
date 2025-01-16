@@ -1,52 +1,47 @@
-<div class="container-fluid">
-    <div class="row ">
-        <div [class.isOpen]="isOpen" class="sidebar ">
-            <div class="content-side  ">
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="active">
-                        <a [routerLink]="'/home'" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi bi-box"></i>
-                            @if (isOpen) {
-                                <span class="ms-1  d-sm-inline">Home</span>
-                            }
+<div class="container-fluid vh-100 vw-100 d-flex ps-0 pe-0">
 
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link px-0 align-middle" href="#">
-                            <i class="fs-4 bi bi-code-slash"></i>
-                            @if (isOpen) {
-                                <span class="ms-1  d-sm-inline">Home</span>
-                            }
-                        </a>
-                    </li>
-                    <li>
-                        <a (click)="reload()" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi bi-arrow-clockwise"></i>
-                            @if (isOpen) {
-                                <span class="ms-1  d-sm-inline">Home</span>
-                            }
-                        </a>
-                    </li>
-                    <li>
-                        <a (click)="logout()" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi bi-box-arrow-right"></i>
-                            @if (isOpen) {
-                                <span class="ms-1  d-sm-inline">Home</span>
-                            }
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="content-footer">
-                <img src="./assets/images/logo-small.png"/>
-                <ion-label>v1.0.0</ion-label>
-            </div>
+    <div [class.isOpen]="isOpen" class="sidebar ">
+        <div class="content-side">
+
+            <ion-icon (click)="closeSideBar()" class="close ion-hide-md-up" name="close-outline"></ion-icon>
+
+
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <li [class.active]="url|activeRoot:'home'">
+                    <a [routerLink]="'/home'" class="nav-link align-middle px-0">
+                        <i class="fs-4 bi bi-box"></i>
+                        <span class="ms-1  ion-hide-md-up">Gestion des articles</span>
+                    </a>
+                </li>
+                <li [class.active]="url|activeRoot:'shortcode'">
+                    <a [routerLink]="'/shortcode'" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi bi-code-slash"></i>
+                        <span class="ms-1   ion-hide-md-up">Gestion des shortcodes</span>
+                    </a>
+                </li>
+                <li [class.active]="url|activeRoot:'domain'">
+                    <a [routerLink]="'/domain'" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi bi-arrow-clockwise"></i>
+                        <span class="ms-1   ion-hide-md-up">Changement de domaine</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="logout()" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi bi-box-arrow-right"></i>
+                        <span class="ms-1   ion-hide-md-up">Déconnection</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="col py-3">
-            <ion-content>
-                <ion-router-outlet></ion-router-outlet>
-            </ion-content>
+        <div class="content-footer">
+            <img src="./assets/images/logo-small.png"/>
+            <ion-label>v1.0.0</ion-label>
         </div>
     </div>
+    <div class=" py-3  content-all">
+        <ion-content>
+            <ion-router-outlet></ion-router-outlet>
+        </ion-content>
+    </div>
+
 </div>

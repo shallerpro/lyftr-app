@@ -1,15 +1,29 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
-import {IonContent, IonFab, IonFabButton, IonIcon, IonImg, IonItem, IonLabel, IonList} from '@ionic/angular/standalone';
+import {
+    IonButton,
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonList,
+    IonThumbnail,
+    IonTitle,
+    IonToolbar
+} from '@ionic/angular/standalone';
 import {addIcons} from "ionicons";
-import {add} from "ionicons/icons";
+import {add, reorderThreeOutline} from "ionicons/icons";
 import {PostService} from "../../../shared/services/post.service";
 import {UserService} from "../../../shared/services/user.service";
 import {PostModel} from "../../../shared/models/post.model";
 import {Observable} from "rxjs";
 import {CategorySelectorComponent} from "../../../shared/components/category-selector/category-selector.component";
 import {HostModel} from "../../../shared/models/host.model";
+import {StripHtmlPipe} from "../../../shared/pipes/strip-html.pipe";
+import {SidebarService} from "../../../shared/services/sidebar.service";
 
 
 @Component({
@@ -17,23 +31,28 @@ import {HostModel} from "../../../shared/models/host.model";
     templateUrl: 'home.page.html',
     styleUrls: ['home.page.scss'],
     standalone: true,
-    imports: [IonImg, IonContent, IonFab, IonFabButton, IonIcon, IonList, IonItem, IonLabel, CategorySelectorComponent],
+    imports: [IonContent, IonList, IonItem, CategorySelectorComponent, IonHeader, IonToolbar, IonTitle, IonButton, StripHtmlPipe, IonFab, IonFabButton, IonIcon, IonThumbnail],
 })
 export class HomePage implements OnInit {
 
     public currentHostName = '';
     public items: PostModel[] = [];
-    private postService: PostService = inject(PostService);
-    private userService: UserService = inject(UserService);
-    private router: Router = inject(Router);
+    private readonly postService: PostService = inject(PostService);
+    private readonly userService: UserService = inject(UserService);
+    private readonly sidebar: SidebarService = inject(SidebarService);
+    private readonly router: Router = inject(Router);
     private refresh$: Observable<any> | null = null;
+    private isSidebarOpen: boolean = false;
 
     constructor() {
-        addIcons({add});
+        addIcons({add, reorderThreeOutline});
 
         this.userService.obsCurrentHost().subscribe(async (host) => {
             if (host)
                 await this.init(host);
+        });
+        this.sidebar.observeIsOpen().subscribe((isOpen) => {
+            this.isSidebarOpen = isOpen;
         });
 
     }
@@ -66,12 +85,19 @@ export class HomePage implements OnInit {
     }
 
     async doAdd() {
-        await this.router.navigate(['/addPost'])
+        await this.router.navigate(['/post'])
 
     }
 
     async doEdit(postId: string) {
-        await this.router.navigate(['/addPost', {id: postId}]);
+        await this.router.navigate(['/post', {id: postId}]);
+    }
+
+    async switchSidebar() {
+        if (this.isSidebarOpen)
+            this.sidebar.closeSidebar();
+        else
+            this.sidebar.openSidebar();
     }
 
 
