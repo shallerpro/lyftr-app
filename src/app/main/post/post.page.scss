@@ -5,10 +5,38 @@
 
 
 .row-img {
-  height: 100px;
+  height: 250px;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .img {
   height: 100%;
   width: 100%;
+  object-fit: scale-down;
+  cursor: pointer;
+  border-radius: 16px;
+
+  &.cover {
+
+    object-fit: cover;
+  }
+
+
+}
+
+ion-button {
+  margin-top: 15px;
+  width: 300px;
+
+}
+
+.remove {
+  margin-top: 5px;
+  border: 2px solid red;
+  --background: transparent;
+  color: red;
 }

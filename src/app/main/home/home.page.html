@@ -1,21 +1,7 @@
-<ion-header>
-    <ion-toolbar>
-
-        <ion-icon (click)="switchSidebar()" class="ion-hide-md-up menu" name="reorder-three-outline"
-                  slot="start"></ion-icon>
-
-        <ion-title slot="start">
-            Gestion des articles
-        </ion-title>
-
-        <ion-button (click)="doAdd()" class="ion-hide-md-down" slot="end">
-            Ajouter un article
-        </ion-button>
-
-    </ion-toolbar>
-</ion-header>
+<app-header [showAdd]="true" [showMenu]="true" title="Gestion des articles"></app-header>
 <ion-content [fullscreen]="true" class="ion-padding content ">
-    <app-category-selector horizontalScroll="true"></app-category-selector>
+    <app-item-selector (onSelect)="onSelectCategories($event)" [horizontalScroll]="true" [items]="categories"
+                       [multiSelection]="true"></app-item-selector>
 
     <ion-fab class="ion-hide-md-up" horizontal="end" slot="fixed" vertical="bottom">
         <ion-fab-button (click)="doAdd()">

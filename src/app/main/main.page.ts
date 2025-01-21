@@ -1,11 +1,11 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {SidebarService} from "../../shared/services/sidebar.service";
-import {IonButton, IonContent, IonIcon, IonLabel, IonRouterOutlet} from "@ionic/angular/standalone";
+import {IonContent, IonIcon, IonItem, IonLabel, IonRouterOutlet} from "@ionic/angular/standalone";
 import {ActivatedRoute, NavigationEnd, Router, RouterLink} from "@angular/router";
 import {UserService} from "../../shared/services/user.service";
 import {ActiveRootPipe} from "../../shared/pipes/active-root.pipe";
 import {addIcons} from "ionicons";
-import {closeOutline} from "ionicons/icons";
+import {menuOutline} from "ionicons/icons";
 
 @Component({
     selector: 'app-main',
@@ -19,7 +19,7 @@ import {closeOutline} from "ionicons/icons";
         IonLabel,
         ActiveRootPipe,
         IonIcon,
-        IonButton
+        IonItem
     ]
 })
 export class MainPage implements OnInit {
@@ -34,7 +34,7 @@ export class MainPage implements OnInit {
 
     constructor() {
         addIcons({
-            closeOutline
+            menuOutline
         });
 
         this.sidebarService.observeIsOpen().subscribe(isOpen => {

@@ -21,6 +21,7 @@
     "@angular/forms": "^18.0.0",
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
+    "@angular/pwa": "^0.5.3",
     "@angular/router": "^18.0.0",
     "@capacitor/angular": "^2.0.3",
     "@capacitor/app": "6.0.2",

@@ -73,5 +73,19 @@ ion-input {
   height: 56px !important;
 }
 
+ion-textarea {
+  --padding-start: 16px !important;
+  --padding-end: 16px !important;
+  --padding-top: 16px !important;
+  --padding-bottom: 16px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  margin-bottom: 16px !important;
+  background: #EBEBEB !important;
+  border-radius: 16px !important;
+  text-align: left !important;
+
+}
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';

@@ -1,29 +1,19 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
-import {
-    IonButton,
-    IonContent,
-    IonFab,
-    IonFabButton,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonList,
-    IonThumbnail,
-    IonTitle,
-    IonToolbar
-} from '@ionic/angular/standalone';
+import {IonContent, IonFab, IonFabButton, IonIcon, IonItem, IonList, IonThumbnail} from '@ionic/angular/standalone';
 import {addIcons} from "ionicons";
 import {add, reorderThreeOutline} from "ionicons/icons";
 import {PostService} from "../../../shared/services/post.service";
 import {UserService} from "../../../shared/services/user.service";
 import {PostModel} from "../../../shared/models/post.model";
 import {Observable} from "rxjs";
-import {CategorySelectorComponent} from "../../../shared/components/category-selector/category-selector.component";
 import {HostModel} from "../../../shared/models/host.model";
 import {StripHtmlPipe} from "../../../shared/pipes/strip-html.pipe";
-import {SidebarService} from "../../../shared/services/sidebar.service";
+import {HeaderComponent} from "../../../shared/components/header/header.component";
+import {HostService} from "../../../shared/services/host.service";
+import {CategorieModel} from "../../../shared/models/categorie.model";
+import {ItemSelectorComponent} from "../../../shared/components/item-selector/item-selector.component";
 
 
 @Component({
@@ -31,18 +21,18 @@ import {SidebarService} from "../../../shared/services/sidebar.service";
     templateUrl: 'home.page.html',
     styleUrls: ['home.page.scss'],
     standalone: true,
-    imports: [IonContent, IonList, IonItem, CategorySelectorComponent, IonHeader, IonToolbar, IonTitle, IonButton, StripHtmlPipe, IonFab, IonFabButton, IonIcon, IonThumbnail],
+    imports: [IonContent, IonList, IonItem, StripHtmlPipe, IonFab, IonFabButton, IonIcon, IonThumbnail, HeaderComponent, ItemSelectorComponent],
 })
 export class HomePage implements OnInit {
 
     public currentHostName = '';
     public items: PostModel[] = [];
+    public categories: CategorieModel[] = [];
     private readonly postService: PostService = inject(PostService);
     private readonly userService: UserService = inject(UserService);
-    private readonly sidebar: SidebarService = inject(SidebarService);
+    private readonly hostService: HostService = inject(HostService);
     private readonly router: Router = inject(Router);
     private refresh$: Observable<any> | null = null;
-    private isSidebarOpen: boolean = false;
 
     constructor() {
         addIcons({add, reorderThreeOutline});
@@ -51,10 +41,16 @@ export class HomePage implements OnInit {
             if (host)
                 await this.init(host);
         });
-        this.sidebar.observeIsOpen().subscribe((isOpen) => {
-            this.isSidebarOpen = isOpen;
+
+        this.userService.obsCurrentHost().subscribe(async (host) => {
+            if (host)
+                this.categories = await this.hostService.getCategoriesByHost(host);
         });
 
+    }
+
+    onSelectCategories(categories: CategorieModel[]) {
+        console.log(categories);
     }
 
     async init(host: HostModel) {
@@ -80,9 +76,6 @@ export class HomePage implements OnInit {
 
     }
 
-    async doLogout() {
-        await this.userService.logout();
-    }
 
     async doAdd() {
         await this.router.navigate(['/post'])
@@ -91,13 +84,6 @@ export class HomePage implements OnInit {
 
     async doEdit(postId: string) {
         await this.router.navigate(['/post', {id: postId}]);
-    }
-
-    async switchSidebar() {
-        if (this.isSidebarOpen)
-            this.sidebar.closeSidebar();
-        else
-            this.sidebar.openSidebar();
     }
 
 

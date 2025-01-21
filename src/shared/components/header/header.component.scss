@@ -1,0 +1,20 @@
+ion-header {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  ion-icon {
+    color: #000000;
+  }
+
+  ion-title {
+    font-size: 35px;
+    font-weight: bold;
+    color: #000000;
+    padding-left: 0;
+    --padding-start: 0;
+  }
+
+  ion-button {
+    height: 53px;
+  }
+}

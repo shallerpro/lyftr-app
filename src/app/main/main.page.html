@@ -3,32 +3,50 @@
     <div [class.isOpen]="isOpen" class="sidebar ">
         <div class="content-side">
 
-            <ion-icon (click)="closeSideBar()" class="close ion-hide-md-up" name="close-outline"></ion-icon>
+            <ion-item class="title ion-hide-md-up" lines="none">
+                <ion-icon (click)="closeSideBar()" name="menu-outline"></ion-icon>
+                <ion-label class="ms-1">Menu</ion-label>
+            </ion-item>
 
 
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                <li [class.active]="url|activeRoot:'home'">
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0  " id="menu">
+                <li [class.active]="(url|activeRoot:'home') || (url|activeRoot:'post')"
+                    class="align-items-center justify-content-md-center align-items-start">
                     <a [routerLink]="'/home'" class="nav-link align-middle px-0">
-                        <i class="fs-4 bi bi-box"></i>
-                        <span class="ms-1  ion-hide-md-up">Gestion des articles</span>
+
+                        <ion-item class="menu-item" lines="none">
+                            <i class="fs-4 bi bi-box"></i>
+                            <span class="ms-1  ion-hide-md-up">Gestion des articles</span>
+                        </ion-item>
                     </a>
                 </li>
-                <li [class.active]="url|activeRoot:'shortcode'">
+                <li [class.active]="url|activeRoot:'shortcode'"
+                    class="align-items-center justify-content-md-center align-items-start">
                     <a [routerLink]="'/shortcode'" class="nav-link px-0 align-middle">
-                        <i class="fs-4 bi bi-code-slash"></i>
-                        <span class="ms-1   ion-hide-md-up">Gestion des shortcodes</span>
+
+                        <ion-item class="menu-item" lines="none">
+                            <i class="fs-4 bi bi-code-slash"></i>
+                            <span class="ms-1   ion-hide-md-up">Gestion des shortcodes</span>
+                        </ion-item>
                     </a>
                 </li>
-                <li [class.active]="url|activeRoot:'domain'">
+                <li [class.active]="url|activeRoot:'domain'"
+                    class="align-items-center justify-content-md-center align-items-start">
                     <a [routerLink]="'/domain'" class="nav-link px-0 align-middle">
-                        <i class="fs-4 bi bi-arrow-clockwise"></i>
-                        <span class="ms-1   ion-hide-md-up">Changement de domaine</span>
+
+                        <ion-item class="menu-item" lines="none">
+                            <i class="fs-4 bi bi-arrow-clockwise"></i>
+                            <span class="ms-1   ion-hide-md-up">Changement de domaine</span>
+                        </ion-item>
                     </a>
                 </li>
-                <li>
+                <li class="align-items-center justify-content-md-center align-items-start">
                     <a (click)="logout()" class="nav-link px-0 align-middle">
-                        <i class="fs-4 bi bi-box-arrow-right"></i>
-                        <span class="ms-1   ion-hide-md-up">Déconnection</span>
+
+                        <ion-item class="menu-item" lines="none">
+                            <i class="fs-4 bi bi-box-arrow-right"></i>
+                            <span class="ms-1   ion-hide-md-up">Déconnection</span>
+                        </ion-item>
                     </a>
                 </li>
             </ul>

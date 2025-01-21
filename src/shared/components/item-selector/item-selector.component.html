@@ -1,0 +1,21 @@
+@if (horizontalScroll) {
+    <div class="scroller">
+        <div class="container-scroller">
+            @for (item of items; track item.id) {
+                <span class="chip" [class.chip-selected]="item.raw.selected"
+                      (click)="doSelectCategory(item)">{{ item.name }}</span>
+            } @empty {
+                Aucune categorie
+            }
+        </div>
+    </div>
+} @else {
+    <ion-row>
+        @for (item of items; track item.id) {
+            <ion-chip [class.chip-selected]="item.raw.selected" (click)="doSelectCategory(item)">{{ item.name }}
+            </ion-chip>
+        } @empty {
+            Aucune categorie
+        }
+    </ion-row>
+}

@@ -1,24 +1,10 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {Location} from "@angular/common";
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
-import {
-    IonButton,
-    IonButtons,
-    IonChip,
-    IonCol,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonImg,
-    IonInput,
-    IonRow,
-    IonTextarea,
-    IonTitle,
-    IonToolbar
-} from "@ionic/angular/standalone";
+import {IonButton, IonContent, IonIcon, IonInput, IonRow, IonTextarea} from "@ionic/angular/standalone";
 import {CategorieModel} from "../../../shared/models/categorie.model";
 import {addIcons} from "ionicons";
-import {arrowBackOutline} from "ionicons/icons";
+import {arrowBackOutline, chevronDownOutline, chevronUpOutline} from "ionicons/icons";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../../shared/services/user.service";
 import {HostService} from "../../../shared/services/host.service";
@@ -29,14 +15,15 @@ import {doc, Firestore} from "@angular/fire/firestore";
 import {PostService} from "../../../shared/services/post.service";
 import {SettingsService} from "../../../shared/services/settings.service";
 import {HostModel} from "../../../shared/models/host.model";
+import {HeaderComponent} from "../../../shared/components/header/header.component";
+import {ItemSelectorComponent} from "../../../shared/components/item-selector/item-selector.component";
 
 @Component({
     selector: 'app-post',
     templateUrl: './post.page.html',
     styleUrls: ['./post.page.scss'],
     standalone: true,
-    imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, ReactiveFormsModule, IonIcon,
-        IonInput, IonRow, IonImg, IonChip, IonTextarea, IonCol, IonButtons]
+    imports: [IonContent, IonButton, ReactiveFormsModule, IonRow, IonTextarea, HeaderComponent, ItemSelectorComponent, IonInput, IonIcon]
 })
 export class PostPage implements OnInit {
 
@@ -50,6 +37,11 @@ export class PostPage implements OnInit {
     public categories: CategorieModel[] = [];
     public currentId: string = "";
     public currentImageUrl: string = "";
+    public durations: any[] = [
+        {name: 'Illimité', value: 0, id: 0, raw: {selected: false}},
+        {name: '1 jour', value: 1, id: 1, raw: {selected: false}},
+        {name: '1 semaine', value: 7, id: 2, raw: {selected: false}},
+        {name: '1 mois', value: 30, id: 3, raw: {selected: false}}];
     private firestore: Firestore = inject(Firestore);
     private settings: SettingsService = inject(SettingsService);
     private router: Router = inject(Router);
@@ -60,9 +52,8 @@ export class PostPage implements OnInit {
     private hostService: HostService = inject(HostService);
     private postService: PostService = inject(PostService);
 
-
     constructor() {
-        addIcons({arrowBackOutline})
+        addIcons({arrowBackOutline, chevronDownOutline, chevronUpOutline})
         this.userService.obsCurrentHost().subscribe(async (host) => {
             if (host)
                 await this.init(host);
@@ -70,27 +61,12 @@ export class PostPage implements OnInit {
         });
     }
 
-    doBack() {
-        this.location.back();
-    }
-
-    doSelectCategory(category: CategorieModel) {
-        category.raw.selected = !category.raw.selected;
-    }
-
-
-    isAiCheck() {
-        const check: boolean | null | undefined = this.postForm.value.isAi;
-        return check != undefined ? check : false;
-
+    get isAi() {
+        return this.postForm?.value?.isAi;
     }
 
     doSwitchAiManuel() {
-
-        if (this.isAiCheck()) {
-            this.postForm.patchValue({isAi: !this.isAiCheck()});
-        }
-
+        this.postForm.get('isAi')?.setValue(!this.isAi);
     }
 
     async init(host: HostModel) {
@@ -140,10 +116,13 @@ export class PostPage implements OnInit {
 
     }
 
-
     async ngOnInit() {
 
 
+    }
+
+    async doRemovePost() {
+    
     }
 
     async doAddPost() {
@@ -151,7 +130,7 @@ export class PostPage implements OnInit {
         try {
             let post: PostModel = new PostModel();
 
-            if (this.isAiCheck()) {
+            if (this.postForm?.value?.isAi) {
                 post.AiPattern = this.postForm.value.aiPattern ? this.postForm.value.aiPattern : "";
             } else {
                 post.title = this.postForm.value.title ? this.postForm.value.title : "";
@@ -205,6 +184,7 @@ export class PostPage implements OnInit {
                 promptLabelCancel: "Annuler"
             });
             if (image && image.dataUrl) {
+                this.currentImageUrl = image.dataUrl;
                 this.currentImageUrl = await this.storageService.uploadImage(image.dataUrl, '',);
 
             }
@@ -214,4 +194,15 @@ export class PostPage implements OnInit {
         }
     }
 
+    onSelectCategories(categories: CategorieModel[]) {
+        this.categories.forEach((category: CategorieModel) => {
+            category.raw.selected = !!categories.find((s: CategorieModel) => s.id == category.id);
+        });
+    }
+
+    onSelectDuration(durations: any) {
+        this.durations.forEach((duration: any) => {
+            duration.raw.selected = !!durations.find((s: any) => s.id == duration.id);
+        });
+    }
 }
